@@ -4,3 +4,6 @@ logs
 .vscode
 .history
 .env
+go.mod
+go.sum
+beelzebub
