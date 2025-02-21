@@ -1,0 +1,14 @@
+apiVersion: "v1"
+protocol: "ssh"
+address: ":22"
+description: "SSH interactive Groq"
+commands:
+  - regex: "^(.+)$"
+    plugin: "LLMHoneypot"
+serverVersion: "OpenSSH"
+serverName: "ubuntu"
+passwordRegex: "^(root|qwerty|Smoker666|123456|jenkins|minecraft|sinus|alex|postgres|Ly123456)$"
+deadlineTimeoutSeconds: 2000
+plugin:
+   llmModel: "groq"
+   openAISecretKey: "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"

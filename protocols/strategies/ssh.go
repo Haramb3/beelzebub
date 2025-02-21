@@ -2,13 +2,14 @@ package strategies
 
 import (
 	"fmt"
-	"github.com/mariocandela/beelzebub/v3/parser"
-	"github.com/mariocandela/beelzebub/v3/plugins"
-	"github.com/mariocandela/beelzebub/v3/tracer"
 	"net"
 	"regexp"
 	"strings"
 	"time"
+
+	"github.com/mariocandela/beelzebub/v3/parser"
+	"github.com/mariocandela/beelzebub/v3/plugins"
+	"github.com/mariocandela/beelzebub/v3/tracer"
 
 	"github.com/gliderlabs/ssh"
 	"github.com/google/uuid"
@@ -53,7 +54,7 @@ func (sshStrategy *SSHStrategy) Init(beelzebubServiceConfiguration parser.Beelze
 
 								llmHoneypot := plugins.LLMHoneypot{
 									Histories:    make([]plugins.Message, 0),
-									OpenAIKey:    beelzebubServiceConfiguration.Plugin.OpenAISecretKey,
+									APIKey:       beelzebubServiceConfiguration.Plugin.OpenAISecretKey,
 									Protocol:     tracer.SSH,
 									Host:         beelzebubServiceConfiguration.Plugin.Host,
 									Model:        llmModel,
@@ -139,7 +140,7 @@ func (sshStrategy *SSHStrategy) Init(beelzebubServiceConfiguration parser.Beelze
 
 								llmHoneypot := plugins.LLMHoneypot{
 									Histories:    histories,
-									OpenAIKey:    beelzebubServiceConfiguration.Plugin.OpenAISecretKey,
+									APIKey:       beelzebubServiceConfiguration.Plugin.OpenAISecretKey,
 									Protocol:     tracer.SSH,
 									Host:         beelzebubServiceConfiguration.Plugin.Host,
 									Model:        llmModel,

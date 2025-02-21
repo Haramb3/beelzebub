@@ -46,7 +46,7 @@ func (httpStrategy HTTPStrategy) Init(beelzebubServiceConfiguration parser.Beelz
 
 					llmHoneypot := plugins.LLMHoneypot{
 						Histories:    make([]plugins.Message, 0),
-						OpenAIKey:    beelzebubServiceConfiguration.Plugin.OpenAISecretKey,
+						APIKey:       beelzebubServiceConfiguration.Plugin.OpenAISecretKey,
 						Protocol:     tracer.HTTP,
 						Host:         beelzebubServiceConfiguration.Plugin.Host,
 						Model:        llmModel,
